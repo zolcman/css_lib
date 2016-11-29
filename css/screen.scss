@@ -1,0 +1,989 @@
+
+
+@import "normalize.css";
+@import "layout.css";
+
+//vars
+
+$dark-grey: #6c757e;
+$light-grey: #dddddd;
+$iconsspite: url(../img/icons.png);
+$deepblue :#5d9cec;
+$blue: #4fc1e9;
+$orange:#ffce54;
+$green: #8cc152;
+$red: #da4453;
+
+//mixins 
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+@mixin border-radius-top-corners($radius) {
+	-webkit-border-top-left-radius: $radius;
+-webkit-border-top-right-radius: $radius;
+-moz-border-radius-topleft: $radius;
+-moz-border-radius-topright: $radius;
+border-top-left-radius: $radius;
+border-top-right-radius: $radius;
+}
+
+//icons
+
+.grey-plus {
+    background: $iconsspite no-repeat;
+    background-position: 0px 0px ;
+     width: 25px;
+    height: 25px;
+    
+}
+.icon-corect {
+    background: $iconsspite no-repeat;
+        background-position: -90px 0px;
+     width: 25px;
+    height: 25px;
+    
+}
+.icon-wrong {
+    background: $iconsspite no-repeat;
+    background-position: -64px 0px;
+     width: 25px;
+    height: 25px;
+    
+}
+.icon-drop-down{
+    background: $iconsspite no-repeat;
+    background-position: -366px 0px;
+     width: 25px;
+    height: 25px;
+    
+}
+
+.icon-drop-down-updown{
+    background: $iconsspite no-repeat;
+    background-position: -354px 0px;
+    width: 31px;
+    height: 25px;
+    
+}
+
+
+
+
+
+.icon-delete{
+    background: $iconsspite no-repeat;
+    background-position: -407px 0px;
+     width: 25px;
+    height: 25px;
+    
+}
+.icon-warn-message {
+    background: $iconsspite no-repeat;
+    background-position: -28px 0px;
+     width: 25px;
+    height: 25px;
+}
+
+.icon-blue-plus{
+    background: $iconsspite no-repeat;
+    background-position: -320px 0px;
+     width: 25px;
+    height: 26px;
+    
+}
+
+//floating elements
+
+.gt-left {
+    float: left;
+}
+.gt-right {
+    float: right;
+}
+.gt-clear {
+    clear: both;
+}
+.gt-clear:after {
+    clear: both;
+    content: "";
+    display: block;
+}
+.gt-center {
+    margin: 0 auto;
+}
+.gt-text-center {
+    text-align: center;
+}
+//element box
+
+.group {
+    box-sizing: border-box;
+    width: 100%;
+    @include border-radius(3px); 
+    border:1px solid #dddddd;
+    
+}
+.group-header {
+    background: #f6f8fa;
+    padding: 20px 19px;
+    font-size: 24px;
+    color:$dark-grey;
+    border-bottom: 1px solid #dddddd; 
+}
+.group-content {
+    padding: 30px 19px;
+}
+a.group-header-link {
+   
+    display: block;
+}
+
+// make distance between elements
+
+.separator {
+    height: 20px;
+}
+
+// avatars
+
+.ava-square {
+    width: 80px;
+    height: 80px;
+    overflow: hidden;
+    background: $light-grey;
+    @include border-radius(4px);
+}
+.ava-square img {
+    width: 100%;
+}
+.ava-round-small {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    background: $light-grey;
+    @include border-radius(50%); 
+}
+.ava-round-small img {
+    width: 100%;
+}
+.ava-round-big {
+    width: 110px;
+    height: 110px;
+    overflow: hidden;
+    background: $light-grey;
+    @include border-radius(50%); 
+}
+.ava-round-big img {
+    width: 100%;
+}
+
+// ul list elements
+
+ul.gt-list-group {
+    @extend .gt-reset;
+    list-style-type: none;
+}
+ul.gt-list-group li {
+    display: block;
+    padding: 9px 6px;
+     
+    
+}
+
+.chat-name {
+    padding-top: 14px;
+    padding-left: 10px;
+    position: relative;
+    font-size: 18px;
+    
+}
+a.chat-user-id-link {
+    display: block;
+    width: 100%;
+    height: 50px;
+    margin: -9px -6px;
+    padding: 9px 6px;
+    color:$dark-grey;
+    transition: 0.5s;
+}
+sup.mes-counter {
+    background:#ff0000;
+     @include border-radius(50%);
+     color:white;
+     display: block;
+     position: absolute;
+     width: 20px;
+     height: 20px;
+    text-align: center;
+    right: -15px;
+    top: 7px;
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+
+ul.gt-list-group li:hover {
+    border:1px solid #2691f9;
+    padding: 8px 5px;
+    
+}
+ul.gt-list-group li:hover a.chat-user-id-link {
+    color:#2691f9;
+}
+
+// big labels deepblue, blue, orange
+
+.labelbox {
+    padding: 20px;
+    box-sizing: border-box;
+     @include border-radius(3px);
+    width: 100%;
+    max-width: 284px;
+}
+.gt-big-label-primary {
+    background:$deepblue;
+    @extend .labelbox;
+}
+.gt-big-label-info {
+    background:$blue;
+    @extend .labelbox;
+}
+.gt-big-label-warn {
+    background:$orange;
+    @extend .labelbox;
+}
+.gt-big-label-header {
+    color:white;
+    font-weight: 600;
+    font-size: 18px;
+}
+.gt-big-label-content {
+    color:white;
+    font-weight: 600;
+    font-size: 35px;
+        margin-top: 10px;
+}
+
+
+// charts & graphics
+
+.chart {
+    width: 100%;
+    height: 180px;
+    border-bottom: 2px solid $light-grey;
+    border-left: 2px solid $light-grey;
+    border-top: 0px solid $light-grey;
+    border-right: 1px solid $light-grey;
+    background: repeating-linear-gradient(
+    to bottom,
+    $light-grey,
+    $light-grey 1px,
+    #fff 1px,
+    #fff 25%
+  );
+    position: relative;
+}
+ul.bars {
+    @extend .gt-reset;
+    list-style-type: none;
+    position: absolute;
+    bottom: 0;
+} 
+ul.bars li {
+    max-height: 182px;
+    width: 24px;
+    background:$blue;
+    vertical-align:bottom; 
+    display:inline-block;
+    margin: 0 17px;
+    @include border-radius-top-corners(3px);
+}
+
+ul.bar-labels {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    margin-left: 2px;
+    margin-top: 10px;
+    
+}
+ul.bar-labels li {
+    display:inline-block;
+    margin: 0 16px;
+    text-align: center;
+    color:$light-grey;
+    font-size: 11px;
+    width: 26px;
+}
+.chart-header {
+    font-size: 24px;
+    font-weight: bold;
+    color:$dark-grey;
+    margin-bottom: 44px;
+}
+
+//pie chart
+.donut-cart-group {
+     position: relative;
+}
+.donut-text {
+    text-transform: uppercase;
+     position: absolute;
+     z-index: +1;
+     top: 80px;
+    left: 76px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 26px;
+    color:$dark-grey;
+}
+.donut-labels {
+    margin-top: 30px;
+}
+.pie-label {
+     width: 50%;
+     font-size: 11px;
+     color:$light-grey;
+     position: relative;
+     padding-left: 50px;
+     box-sizing: border-box;
+     margin-bottom: 3px;
+}
+.pie-label:before {
+    display: block;
+   content: "";
+   width: 40px;
+   height: 6px;
+   position: absolute;
+   left: 0;
+   top:3px;
+}
+.pie-purp-label {
+   @extend .pie-label;
+}
+.pie-purp-label:before {
+   background: #ed5565;
+}
+.pie-blue-label {
+   @extend .pie-label;
+}
+.pie-blue-label:before {
+   background: $blue;
+}
+.pie-orange-label {
+   @extend .pie-label;
+}
+.pie-orange-label:before {
+   background: $orange;
+}
+
+//inputs
+
+input[type="text"] {
+    height: 39px;
+    box-sizing: border-box;
+    border:1px solid $light-grey;
+    padding-left: 17px;
+}
+
+input[type=text]:focus {
+    border: 1px solid $blue;
+    outline: 0;
+}
+input.correct-input {
+    border:1px solid $green;
+}
+input.wrong-input {
+    border:1px solid $red;
+}
+.input-container span {
+     display: inline-block;
+     padding-top: 3px;
+     vertical-align: middle;
+}
+
+//textarea
+
+textarea {
+    box-sizing: border-box;
+    border:1px solid $light-grey;
+    padding-left: 17px;
+    padding-top: 11px;
+    min-height: 100px;
+}
+
+// styled inputs
+
+.styled-input-container {
+    width: 213px;
+    height: 40px;
+    background-image: linear-gradient(to top, 
+    #ddd 25%,
+    white 25%
+    
+    );
+  background-size: 100% 40px;
+  background-position: 50% 100%;
+  background-repeat: no-repeat;
+  padding-left: 1px;
+}
+
+.styled-input-container input {
+    border: 0px;
+    outline: 0;
+    width: 212px;
+}
+.styled-input-container input:focus {
+    border: 0px;
+    outline: 0;
+}
+.focused {
+    
+    background-image: linear-gradient(to top, 
+    $blue 25%,
+    white 25%
+    
+    );
+    
+}
+
+
+ul.dropdown-list {
+    display: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid $light-grey;
+    list-style-type: none;
+    margin-top: 1px;
+    background: white;
+    position: relative;
+    z-index: +1;
+}
+ul.dropdown-list li {
+    box-sizing: border-box;
+    display: block;
+    padding: 10px 14px;
+}
+ul.dropdown-list li:hover {
+    border:1px solid $blue;
+    padding: 9px 13px;
+    cursor: pointer;
+}
+.drop-down-input {
+    position: relative;
+}
+.drop-down-input:after {
+    content: '';
+    display: block;
+    position: absolute;
+    @extend .icon-drop-down;
+    top: 11px;
+    right: 4px;
+}
+
+.select-style-input input {
+    width: 100%;
+}
+.select-style-input:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 7px;
+    right: 4px;
+}
+
+.select-no-border {
+    width: 133px;
+}
+.select-no-border input {
+    border: 0px;
+}
+
+.select-no-border input:disabled {
+    background: white;
+}
+
+.select-no-border input:focus  {
+    border: 0px;
+    outline: 0px;
+    width: 133px;
+}
+.select-no-border:after {
+    @extend .icon-drop-down-updown;
+    position: absolute;
+    top: 6px;
+}
+
+
+
+
+// chat box
+
+.mes-container {
+    margin-bottom: 20px;
+}
+
+
+.client-chat-mes {
+    border:1px solid #cccccc;
+    padding: 9px;
+    width: 100%;
+    max-width: 364px;
+    line-height: 22px;
+    color:$dark-grey;
+    
+    position: relative;
+    display: inline-block;
+    
+}
+
+span.chat-time {
+    display: inline-block;
+    color:#cccccc;
+    font-size: 14px;
+    box-sizing: border-box;
+    vertical-align: bottom;
+}
+
+.client-chat-mes:before, .client-chat-mes:after {
+ content: '';
+display: block;
+position: absolute;
+
+}
+
+.client-chat-mes:before {
+    width: 0;
+height: 0;
+border-style: solid;
+border-width: 0px 13px 9px 0;
+border-color: transparent #cccccc transparent transparent;
+top: -1px;
+left: -13px;
+    
+}
+.client-chat-mes:after {
+    width: 0;
+height: 0;
+border-style: solid;
+border-width: 0px 12px 7px 0;
+border-color: transparent white transparent transparent;
+top: 0px;
+left: -11px;
+}
+
+
+
+.self-chat-mes {
+    border:1px solid $blue;
+    padding: 9px;
+    width: 100%;
+    max-width: 364px;
+    color:$dark-grey;
+    line-height: 22px;
+    position: relative;
+    display: inline-block;
+}
+
+
+
+.self-chat-mes:before, .self-chat-mes:after {
+ content: '';
+display: block;
+position: absolute;
+
+}
+
+.self-chat-mes:before {
+    width: 0;
+height: 0;
+border-style: solid;
+border-width: 0px 0 9px 13px;
+border-color: transparent transparent transparent $blue;
+top: -1px;
+right: -13px;
+    
+}
+.self-chat-mes:after {
+    width: 0;
+height: 0;
+border-style: solid;
+border-width: 0px 0 7px 12px;
+border-color: transparent transparent transparent white;
+top: 0px;
+right: -11px;
+}
+
+.left-chat {
+    margin-left: 44px;
+}
+
+
+// add big blue btn
+
+a.add-btn-big {
+    display: block;
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+    border: 1px solid $blue;
+    position: relative;
+}
+a.add-btn-big:before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 60px;
+    background: $blue;
+    top: 48px;
+    left: 18px;
+}
+a.add-btn-big:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 60px;
+    width: 2px;
+    background: $blue;
+    top: 18px;
+    left: 48px;
+}
+
+//delete btn
+.delete-item-group {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+.item-content {
+    width: 100px;
+    height: 100px;
+    background: $dark-grey;
+}
+a.delete-item-icon {
+    display: block;
+    position: absolute;
+    top: -9px;
+    right: -10px;
+    @extend .icon-delete;
+}
+// add blue link
+
+a.add-link-blue {
+    text-decoration: none;
+    color: $blue;
+    display: block;
+    height: 26px;
+    padding-left: 30px;
+    position: relative;
+}
+a.add-link-blue:before {
+    content: '';
+    display: block;
+    @extend .icon-blue-plus;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+// warning message
+
+.warn-message {
+    position: relative;
+    padding-left: 30px;
+    color:$dark-grey;
+}
+
+
+.warn-message:before {
+    @extend .icon-warn-message;
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -5px;
+}
+
+ul.pagination {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+ul.pagination li {
+    float: left;
+    display: block;
+    margin-left: 20px;
+}
+ul.pagination li {
+    padding-top: 16px;
+}
+ul.pagination li a  {
+    
+    text-decoration: none;
+    color:$dark-grey;
+    font-weight: 600;
+    
+}
+
+ul.pagination li:first-child a, ul.pagination li:last-child a {
+    border: 1px solid $light-grey;
+    padding: 14px 18px;
+    display: block;
+    transition: 0.3s;
+    font-weight: 400;
+}
+ul.pagination li:first-child a:hover, ul.pagination li:last-child a:hover {
+    border: 1px solid $blue;
+    padding: 14px 18px;
+    display: block;
+    color:$blue;
+}
+ul.pagination li:first-child , ul.pagination li:last-child  {
+   
+    padding-top:0px ;
+    display: block;
+   
+}
+
+ul.pagination li a.current {
+    color:$blue;
+}
+
+// radio buttons
+input[type='radio'] {
+     display: none;
+}
+
+
+
+input[type='radio']:checked + label {
+    
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border:1px solid $blue;
+    border-radius: 50%;
+    position: relative;
+}
+ input[type='radio']:checked + label:after {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background:  $blue;
+    border-radius: 50%;
+    content: '';
+    left: 5px;
+    top:5px;
+}
+input[type='radio']:unchecked + label {
+    
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border:1px solid $dark-grey;
+    border-radius: 50%;
+    position: relative;
+}
+input[type='radio']  + label {
+    
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border:1px solid $dark-grey;
+    border-radius: 50%;
+    position: relative;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+input#disabled-checked-rb + label {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border:1px solid $dark-grey;
+    border-radius: 50%;
+    position: relative;
+    
+}
+input#disabled-checked-rb + label:after {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    background:  $dark-grey;
+    border-radius: 50%;
+    content: '';
+    left: 5px;
+    top:5px;
+    
+}
+.radio-btns-group {
+    font-size: 14px;
+}
+
+
+//buttons
+
+.gt-btn-main {
+    background:$blue;
+    color:white;
+    text-decoration: none;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+    min-width: 98px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+.gt-btn-main:active {
+    background:$deepblue;
+    color:white;
+    text-decoration: none;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+}
+.gt-btn-main:hover {
+    border:1px solid $blue;
+    color:$blue;
+    background: white;
+}
+.gt-btn {
+    @extend .gt-btn-main;
+    padding: 15px 25px;
+    
+}
+.gt-btn-small {
+    @extend .gt-btn-main;
+    padding: 12px 25px;
+    
+}
+.gt-btn-big {
+    @extend .gt-btn-main;
+    padding: 17px 25px;
+    
+}
+
+a.gt-btn-disabled {
+    border:1px solid $light-grey;
+    color:$light-grey;
+    padding: 15px 25px;
+    text-decoration: none;
+    box-sizing: border-box;
+     min-width: 98px;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+}
+
+// canvas 
+
+.canvas-container {
+    width: 298px;
+    height: 298px;
+    border: 1px solid $light-grey;
+    position: relative;
+}
+
+.blue-corners {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.top-l {
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    top:-1px;
+    left: -1px;
+    background: $blue;
+}
+.top-r {
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    top:-1px;
+    right: -1px;
+    background: $blue;
+}
+.bottom-l {
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    bottom:-1px;
+    left: -1px;
+    background: $blue;
+}
+.bottom-r {
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    bottom:-1px;
+    right: -1px;
+    background: $blue;
+}
+.canvas {
+    background: white;
+    position: absolute;
+    z-index: 2;
+    width: 288px;
+    height: 288px;
+    top:5px;
+    left: 5px;
+}
+
+
+// tabs 
+
+
+ul.tabs{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    
+}
+ul.tabs li{
+    background: none;
+    color:$dark-grey;
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.tabs-header-stripe {
+    height: 3px;
+    background: $light-grey;
+    margin-top: -3px;
+}
+
+ul.tabs li.current{
+    border-bottom: 10px solid $blue;
+    color: $blue;
+}
+
+.tab-content{
+    display: none;
+    
+    padding: 15px;
+}
+
+.tab-content.current{
+    display: inherit;
+}
+
+
+
+
+// clear margin && padding 
+
+.gt-reset {
+    margin: 0;
+    padding: 0;
+}
