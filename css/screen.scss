@@ -518,7 +518,14 @@ ul.dropdown-list li:hover {
     top: 6px;
 }
 
-
+.select-no-border:before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 39px;
+    position: absolute;
+    top: 6px;
+}
 
 
 // chat box
@@ -979,6 +986,57 @@ ul.tabs li.current{
 }
 
 
+// main template
+
+.left-bar {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    background:#2e363f;
+}
+
+.cont-position {
+    width: calc(100% - 300px);
+    margin-left: 300px;
+    margin-right: 15px;
+}
+
+.user-info-block {
+    background: #2691f9;
+    padding: 33px 20px;
+}
+.user-name {
+    height: 50px;
+    line-height: 50px;
+    color:white;
+    text-transform: uppercase;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.left-bar-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.left-bar-menu ul li {
+    padding: 34px 19px;
+    border-bottom: 1px solid #262c33;
+}
+.left-bar-menu ul li a {
+    color:white;
+    text-decoration: none;
+    display: block;
+    margin: -34px -19px;
+    padding: 34px 19px;
+    width: 100%;
+}
+.left-bar-menu ul li:hover {
+    background: #404b57;
+}
+.left-bar-menu ul li:hover a {
+    color: #2691f9;
+}
 
 
 // clear margin && padding 
